@@ -1,50 +1,71 @@
-class RecentFile {
-  final String? icon, title, date, size;
+class TrxnsDetails {
+  final String icon, refId, date, amount, status, endDate;
 
-  RecentFile({this.icon, this.title, this.date, this.size});
+  TrxnsDetails({
+    this.icon,
+    this.refId,
+    this.date,
+    this.amount,
+    this.endDate,
+    this.status,
+  });
 }
 
-List demoRecentFiles = [
-  RecentFile(
+List trxns = [
+  TrxnsDetails(
     icon: "assets/icons/xd_file.svg",
-    title: "XD File",
+    refId: "7bn7ge",
     date: "01-03-2021",
-    size: "3.5mb",
+    amount: "1200",
+    status: "Pending",
+    endDate: "01-03-2021",
   ),
-  RecentFile(
-    icon: "assets/icons/Figma_file.svg",
-    title: "Figma File",
-    date: "27-02-2021",
-    size: "19.0mb",
+  TrxnsDetails(
+    icon: "assets/icons/xd_file.svg",
+    refId: "uhuhd3",
+    date: "01-03-2021",
+    amount: "3300",
+    status: "Pending",
+    endDate: "01-03-2021",
   ),
-  RecentFile(
-    icon: "assets/icons/doc_file.svg",
-    title: "Documetns",
-    date: "23-02-2021",
-    size: "32.5mb",
+  TrxnsDetails(
+    icon: "assets/icons/xd_file.svg",
+    refId: "7bn7ge",
+    date: "01-03-2021",
+    amount: "1200",
+    status: "Pending",
+    endDate: "01-03-2021",
   ),
-  RecentFile(
-    icon: "assets/icons/sound_file.svg",
-    title: "Sound File",
-    date: "21-02-2021",
-    size: "3.5mb",
+  TrxnsDetails(
+    icon: "assets/icons/xd_file.svg",
+    refId: "7bn7ge",
+    date: "01-03-2021",
+    amount: "1200",
+    status: "Pending",
+    endDate: "01-03-2021",
   ),
-  RecentFile(
-    icon: "assets/icons/media_file.svg",
-    title: "Media File",
-    date: "23-02-2021",
-    size: "2.5gb",
+  TrxnsDetails(
+    icon: "assets/icons/xd_file.svg",
+    refId: "7bn7ge",
+    date: "01-03-2021",
+    amount: "1200",
+    status: "Pending",
+    endDate: "01-03-2021",
   ),
-  RecentFile(
-    icon: "assets/icons/pdf_file.svg",
-    title: "Sals PDF",
-    date: "25-02-2021",
-    size: "3.5mb",
+  TrxnsDetails(
+    icon: "assets/icons/xd_file.svg",
+    refId: "7bn7ge",
+    date: "01-03-2021",
+    amount: "1200",
+    status: "Pending",
+    endDate: "01-03-2021",
   ),
-  RecentFile(
-    icon: "assets/icons/excle_file.svg",
-    title: "Excel File",
-    date: "25-02-2021",
-    size: "34.5mb",
+  TrxnsDetails(
+    icon: "assets/icons/xd_file.svg",
+    refId: "7bn7ge",
+    date: "01-03-2021",
+    amount: "1200",
+    status: "Pending",
+    endDate: "01-03-2021",
   ),
 ];
