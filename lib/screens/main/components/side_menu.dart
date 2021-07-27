@@ -3,7 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 
 class SideMenu extends StatelessWidget {
   const SideMenu({
-    Key? key,
+    Key key,
   }) : super(key: key);
 
   @override
@@ -11,48 +11,53 @@ class SideMenu extends StatelessWidget {
     return Drawer(
       child: ListView(
         children: [
-          DrawerHeader(
-            child: Image.asset("assets/images/logo.png"),
+          Container(
+            height: 100,
+            margin: const EdgeInsets.symmetric(vertical: 50),
+            child: DrawerHeader(
+              child: Image.asset("assets/images/rift-alliance.png"),
+              // child: Image.asset("assets/images/todovale-v2j.png"),
+            ),
           ),
           DrawerListTile(
             title: "Dashbord",
             svgSrc: "assets/icons/menu_dashbord.svg",
-            press: () {},
+            routeName: "/",
           ),
           DrawerListTile(
             title: "Transaction",
             svgSrc: "assets/icons/menu_tran.svg",
-            press: () {},
+            routeName: "/transaction",
           ),
           DrawerListTile(
-            title: "Task",
+            title: "Investment Plans",
             svgSrc: "assets/icons/menu_task.svg",
-            press: () {},
+            routeName: "/investments",
           ),
           DrawerListTile(
-            title: "Documents",
+            title: "Withdraw",
             svgSrc: "assets/icons/menu_doc.svg",
-            press: () {},
+            routeName: "/withdraw",
           ),
           DrawerListTile(
-            title: "Store",
+            title: "Referrals",
             svgSrc: "assets/icons/menu_store.svg",
-            press: () {},
+            routeName: "/referral",
           ),
           DrawerListTile(
             title: "Notification",
             svgSrc: "assets/icons/menu_notification.svg",
-            press: () {},
+            routeName: "/contact",
           ),
           DrawerListTile(
             title: "Profile",
             svgSrc: "assets/icons/menu_profile.svg",
-            press: () {},
+            routeName: "/profile",
           ),
           DrawerListTile(
             title: "Settings",
             svgSrc: "assets/icons/menu_setting.svg",
-            press: () {},
+            routeName: "/settings",
           ),
         ],
       ),
@@ -62,29 +67,30 @@ class SideMenu extends StatelessWidget {
 
 class DrawerListTile extends StatelessWidget {
   const DrawerListTile({
-    Key? key,
+    Key key,
     // For selecting those three line once press "Command+D"
-    required this.title,
-    required this.svgSrc,
-    required this.press,
+    @required this.title,
+    @required this.svgSrc,
+    @required this.routeName,
   }) : super(key: key);
 
-  final String title, svgSrc;
-  final VoidCallback press;
+  final String title, svgSrc, routeName;
 
   @override
   Widget build(BuildContext context) {
     return ListTile(
-      onTap: press,
+      onTap: () => Navigator.pushNamed(context, routeName),
       horizontalTitleGap: 0.0,
       leading: SvgPicture.asset(
         svgSrc,
-        color: Colors.white54,
+        color: Theme.of(context).primaryColor,
         height: 16,
       ),
       title: Text(
         title,
-        style: TextStyle(color: Colors.white54),
+        style: TextStyle(
+            // color: Colors.white54,
+            ),
       ),
     );
   }

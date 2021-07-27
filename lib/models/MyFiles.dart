@@ -1,16 +1,16 @@
-import 'package:admin/constants.dart';
+import 'package:admin/helpers/constants.dart';
 import 'package:flutter/material.dart';
 
 class CloudStorageInfo {
-  final String? svgSrc, title, totalStorage;
-  final int? numOfFiles, percentage;
-  final Color? color;
+  final String svgSrc, title, totalStorage;
+  final int amount, percentage;
+  final Color color;
 
   CloudStorageInfo({
     this.svgSrc,
     this.title,
     this.totalStorage,
-    this.numOfFiles,
+    this.amount,
     this.percentage,
     this.color,
   });
@@ -18,35 +18,35 @@ class CloudStorageInfo {
 
 List demoMyFiles = [
   CloudStorageInfo(
-    title: "Documents",
-    numOfFiles: 1328,
-    svgSrc: "assets/icons/Documents.svg",
-    totalStorage: "1.9GB",
+    title: "Wallet Balance",
+    amount: 1328,
+    svgSrc: "assets/svgs/purse.svg",
+    // totalStorage: "1.9GB",
     color: primaryColor,
-    percentage: 35,
+    // percentage: 35,
   ),
   CloudStorageInfo(
-    title: "Google Drive",
-    numOfFiles: 1328,
-    svgSrc: "assets/icons/google_drive.svg",
-    totalStorage: "2.9GB",
+    title: "Compound Profit",
+    amount: 1328,
+    svgSrc: "assets/svgs/profits.svg",
+    // totalStorage: "2.9GB",
     color: Color(0xFFFFA113),
-    percentage: 35,
+    // percentage: 35,
   ),
   CloudStorageInfo(
-    title: "One Drive",
-    numOfFiles: 1328,
-    svgSrc: "assets/icons/one_drive.svg",
-    totalStorage: "1GB",
+    title: "Total Deposit",
+    amount: 1328,
+    svgSrc: "assets/svgs/stack-of-coins.svg",
+    // totalStorage: "1GB",
     color: Color(0xFFA4CDFF),
-    percentage: 10,
+    // percentage: 10,
   ),
   CloudStorageInfo(
-    title: "Documents",
-    numOfFiles: 5328,
-    svgSrc: "assets/icons/drop_box.svg",
-    totalStorage: "7.3GB",
+    title: "Total Withdraw",
+    amount: 5328,
+    svgSrc: "assets/svgs/withdrawal.svg",
+    // totalStorage: "7.3GB",
     color: Color(0xFF007EE5),
-    percentage: 78,
+    // percentage: 78,
   ),
 ];

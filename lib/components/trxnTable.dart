@@ -1,15 +1,15 @@
+import 'package:admin/helpers/constants.dart';
 import 'package:admin/models/RecentFile.dart';
 import 'package:data_table_2/data_table_2.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-import '../../../constants.dart';
-
-class RecentFiles extends StatelessWidget {
-  const RecentFiles({
-    Key? key,
+class TrxnTable extends StatelessWidget {
+  const TrxnTable({
+    Key key,
+    @required this.title,
   }) : super(key: key);
-
+  final String title;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -22,7 +22,7 @@ class RecentFiles extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            "Recent Files",
+            title,
             style: Theme.of(context).textTheme.subtitle1,
           ),
           SizedBox(
@@ -32,18 +32,21 @@ class RecentFiles extends StatelessWidget {
               minWidth: 600,
               columns: [
                 DataColumn(
-                  label: Text("File Name"),
+                  label: Text("Reference ID"),
+                ),
+                DataColumn(
+                  label: Text("Amount"),
+                ),
+                DataColumn(
+                  label: Text("Status"),
                 ),
                 DataColumn(
                   label: Text("Date"),
                 ),
-                DataColumn(
-                  label: Text("Size"),
-                ),
               ],
               rows: List.generate(
-                demoRecentFiles.length,
-                (index) => recentFileDataRow(demoRecentFiles[index]),
+                trxns.length,
+                (index) => trxnDataRow(trxns[index]),
               ),
             ),
           ),
@@ -53,26 +56,28 @@ class RecentFiles extends StatelessWidget {
   }
 }
 
-DataRow recentFileDataRow(RecentFile fileInfo) {
+DataRow trxnDataRow(TrxnsDetails fileInfo) {
   return DataRow(
     cells: [
       DataCell(
         Row(
           children: [
-            SvgPicture.asset(
-              fileInfo.icon!,
-              height: 30,
-              width: 30,
-            ),
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
-              child: Text(fileInfo.title!),
-            ),
+            // SvgPicture.asset(
+            //   fileInfo.icon,
+            //   height: 30,
+            //   width: 30,
+            // ),
+            Text(fileInfo.refId),
+            // Padding(
+            //   padding: const EdgeInsets.symmetric(horizontal: defaultPadding),
+            //   child: Text(fileInfo.title),
+            // ),
           ],
         ),
       ),
-      DataCell(Text(fileInfo.date!)),
-      DataCell(Text(fileInfo.size!)),
+      DataCell(Text(fileInfo.date)),
+      DataCell(Text(fileInfo.amount)),
+      DataCell(Text(fileInfo.amount)),
     ],
   );
 }
